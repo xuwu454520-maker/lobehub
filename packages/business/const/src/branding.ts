@@ -4,7 +4,9 @@
 
 export const LOBE_CHAT_CLOUD = 'LobeHub Cloud';
 
-export const BRANDING_NAME = '婉婉的专属AI助手';
+export const BRANDING_NAME = '西瓜AI';
+/** 界面顶部标语，与品牌名分开维护 */
+export const BRANDING_SLOGAN = '婉婉的专属AI助手';
 export const BRANDING_LOGO_URL = '';
 
 export const ORG_NAME = 'LobeHub';

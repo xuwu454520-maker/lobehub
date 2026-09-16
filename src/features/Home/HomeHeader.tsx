@@ -1,3 +1,4 @@
+import { BRANDING_SLOGAN } from '@lobechat/business-const';
 import { Flexbox } from '@lobehub/ui';
 import { Text } from '@lobehub/ui/base-ui';
 import { createStaticStyles } from 'antd-style';
@@ -9,7 +10,7 @@ import { authSelectors, userProfileSelectors } from '@/store/user/slices/auth/se
 
 import AgentSelect from './AgentSelect';
 
-const styles = createStaticStyles(({ css }) => ({
+const styles = createStaticStyles(({ css, cssVar }) => ({
   root: css`
     /* Unbroken names must stay inside the start-aligned header's text lane. */
     max-width: 100%;
@@ -30,6 +31,12 @@ const styles = createStaticStyles(({ css }) => ({
     width: 100%;
     min-width: 0;
     min-height: 48px;
+  `,
+  slogan: css`
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: ${cssVar.colorPrimary};
   `,
 }));
 
@@ -59,6 +66,7 @@ const HomeHeader = memo<HomeHeaderProps>(({ centered }) => {
     // its 48px lane, so the pair reads as one compact block flush with the
     // composer. The layout's lift math (MINIMAL_LIFT) counts on these heights.
     <Flexbox className={styles.root} gap={centered ? 8 : 16} justify={'center'}>
+      {!!BRANDING_SLOGAN && <div className={styles.slogan}>{BRANDING_SLOGAN}</div>}
       {centered ? (
         <AgentSelect />
       ) : (
