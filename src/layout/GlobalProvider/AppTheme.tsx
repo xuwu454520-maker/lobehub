@@ -176,7 +176,8 @@ const AppTheme = memo<AppThemeProps>(
           defaultThemeMode={currentAppearence}
           customTheme={{
             neutralColor: neutralColor ?? defaultNeutralColor,
-            primaryColor: primaryColor ?? defaultPrimaryColor,
+            // 深紫色主题（默认值，用户未在设置中自定义时生效）
+            primaryColor: primaryColor ?? defaultPrimaryColor ?? 'purple',
           }}
           theme={{
             cssVar: { key: 'lobe-vars' },
